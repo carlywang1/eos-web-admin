@@ -1,0 +1,67 @@
+.track {
+  width: 100%;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.step:last-child {
+  flex: 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--md-outline);
+  flex-shrink: 0;
+}
+
+.dot.done {
+  background: var(--md-success);
+}
+
+.dot.current {
+  background: var(--md-primary);
+  box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.15);
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background: var(--md-outline);
+  margin: 0 4px;
+}
+
+.line.done {
+  background: var(--md-success);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--md-on-surface-dim);
+}
+
+.labels .done {
+  color: var(--md-success);
+}
+
+.labels .current {
+  color: var(--md-primary);
+  font-weight: 500;
+}
+
+.labels .pending {
+  color: var(--md-on-surface-dim);
+}

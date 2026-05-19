@@ -1,0 +1,97 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  margin-left: 256px;
+  background: var(--md-background);
+  min-height: 100vh;
+}
+
+.topBar {
+  height: 56px;
+  background: var(--md-surface);
+  border-bottom: 1px solid var(--md-outline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--md-surface-container);
+  border: 1px solid transparent;
+  border-radius: 100px;
+  padding: 8px 16px;
+  width: 280px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.searchBar:hover {
+  background: var(--md-outline);
+}
+
+.searchBar :global(.material-icons-outlined) {
+  font-size: 18px;
+  color: var(--md-on-surface-variant);
+}
+
+.searchBar input {
+  font-size: 14px;
+  width: 100%;
+  color: var(--md-on-surface);
+  background: transparent;
+}
+
+.searchBar input::placeholder {
+  color: var(--md-on-surface-dim);
+}
+
+.kbd {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--md-surface);
+  border: 1px solid var(--md-outline);
+  color: var(--md-on-surface-dim);
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--md-on-surface-variant);
+  transition: background 0.15s, color 0.15s;
+}
+
+.iconBtn:hover {
+  background: var(--md-surface-container);
+  color: var(--md-on-surface);
+}
+
+.iconBtn :global(.material-icons-outlined) {
+  font-size: 20px;
+}
+
+.content {
+  padding: 24px 32px;
+  max-width: 1200px;
+}

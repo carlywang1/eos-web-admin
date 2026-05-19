@@ -1,0 +1,123 @@
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  transition: background 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.uploadBtn:hover {
+  background: #1557b0;
+  box-shadow: var(--md-elevation-1);
+}
+
+.uploadBtn :global(.material-icons-outlined) {
+  font-size: 16px;
+}
+
+.filterChip {
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: var(--md-radius-full);
+  border: 1px solid var(--md-outline);
+  background: var(--md-surface);
+  color: var(--md-on-surface-variant);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filterChip:hover {
+  background: var(--md-surface-hover);
+  border-color: var(--md-on-surface-dim);
+}
+
+.filterChip.active {
+  background: var(--badge-saas-bg);
+  color: var(--md-primary);
+  border-color: var(--md-primary);
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--md-on-surface-dim);
+}
+
+.empty :global(.material-icons-outlined) {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty p {
+  font-size: 14px;
+}
+
+.uploadSection {
+  display: none;
+}
+
+.uploadWrap {
+  position: relative;
+}
+
+.typeMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  background: var(--md-surface);
+  border: 1px solid var(--md-outline);
+  border-radius: var(--md-radius-md);
+  box-shadow: var(--md-elevation-2);
+  padding: 6px 0;
+  min-width: 140px;
+  z-index: 50;
+}
+
+.typeMenuTitle {
+  font-size: 11px;
+  color: var(--md-on-surface-dim);
+  padding: 4px 14px 6px;
+  font-weight: 500;
+}
+
+.typeMenuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  padding: 8px 14px;
+  color: var(--md-on-surface);
+  transition: background 0.1s;
+}
+
+.typeMenuItem:hover {
+  background: var(--md-surface-hover);
+}

@@ -1,0 +1,27 @@
+.badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: var(--md-radius-full);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.saas {
+  background: var(--badge-saas-bg);
+  color: var(--badge-saas-text);
+}
+
+.raas {
+  background: var(--badge-raas-bg);
+  color: var(--badge-raas-text);
+}
+
+.ai {
+  background: var(--badge-ai-bg);
+  color: var(--badge-ai-text);
+}
+
+.apps {
+  background: var(--badge-apps-bg);
+  color: var(--badge-apps-text);
+}

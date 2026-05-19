@@ -1,0 +1,99 @@
+:root {
+  /* Colors */
+  --md-primary: #1a73e8;
+  --md-on-primary: #ffffff;
+  --md-surface: #ffffff;
+  --md-background: #f8f9fa;
+  --md-outline: #e8eaed;
+  --md-on-surface: #1f1f1f;
+  --md-on-surface-variant: #5f6368;
+  --md-on-surface-dim: #80868b;
+  --md-success: #1e8e3e;
+  --md-warning: #ea8600;
+  --md-error: #d93025;
+
+  /* Surfaces */
+  --md-surface-container: #f1f3f4;
+  --md-surface-hover: #f8f9fa;
+
+  /* Type badges */
+  --badge-saas-bg: #e8f0fe;
+  --badge-saas-text: #1a73e8;
+  --badge-raas-bg: #fce8e6;
+  --badge-raas-text: #d93025;
+  --badge-ai-bg: #e6f4ea;
+  --badge-ai-text: #1e8e3e;
+  --badge-apps-bg: #fef7e0;
+  --badge-apps-text: #ea8600;
+
+  /* Stage chips */
+  --stage-confirming-bg: #fef7e0;
+  --stage-confirming-text: #ea8600;
+  --stage-executing-bg: #e6f4ea;
+  --stage-executing-text: #1e8e3e;
+  --stage-deploying-bg: #e8f0fe;
+  --stage-deploying-text: #1a73e8;
+  --stage-done-bg: #f1f3f4;
+  --stage-done-text: #5f6368;
+
+  /* Shape */
+  --md-radius-xs: 4px;
+  --md-radius-sm: 8px;
+  --md-radius-md: 12px;
+  --md-radius-lg: 16px;
+  --md-radius-full: 100px;
+
+  /* Typography */
+  --font-family: 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Elevation */
+  --md-elevation-0: none;
+  --md-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --md-elevation-2: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --md-elevation-3: 0 1px 3px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+
+  /* Layout */
+  --content-max-width: 960px;
+  --nav-height: 64px;
+}
+
+[data-theme="dark"] {
+  --md-primary: #8ab4f8;
+  --md-on-primary: #1f1f1f;
+  --md-surface: #292a2d;
+  --md-background: #1f2023;
+  --md-outline: #3c4043;
+  --md-on-surface: #e8eaed;
+  --md-on-surface-variant: #bdc1c6;
+  --md-on-surface-dim: #9aa0a6;
+
+  --md-surface-container: #35363a;
+  --md-surface-hover: #3c4043;
+
+  --badge-saas-bg: #1a3a5c;
+  --badge-saas-text: #8ab4f8;
+  --badge-raas-bg: #4a1c1a;
+  --badge-raas-text: #f28b82;
+  --badge-ai-bg: #1a3c2a;
+  --badge-ai-text: #81c995;
+  --badge-apps-bg: #4a3a1a;
+  --badge-apps-text: #fdd663;
+
+  --stage-confirming-bg: #4a3a1a;
+  --stage-confirming-text: #fdd663;
+  --stage-executing-bg: #1a3c2a;
+  --stage-executing-text: #81c995;
+  --stage-deploying-bg: #1a3a5c;
+  --stage-deploying-text: #8ab4f8;
+  --stage-done-bg: #35363a;
+  --stage-done-text: #9aa0a6;
+}

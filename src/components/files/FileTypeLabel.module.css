@@ -1,0 +1,37 @@
+.label {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--md-radius-full);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.contract {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.quote {
+  background: #fef7e0;
+  color: #ea8600;
+}
+
+.rfp {
+  background: #e6f4ea;
+  color: #1e8e3e;
+}
+
+.rfq {
+  background: #fce8e6;
+  color: #d93025;
+}
+
+.proposal {
+  background: #f3e8fd;
+  color: #8430ce;
+}
+
+.other {
+  background: #f1f3f4;
+  color: #5f6368;
+}

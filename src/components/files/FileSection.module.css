@@ -1,0 +1,52 @@
+.section {
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.header:hover {
+  opacity: 0.8;
+}
+
+.header :global(.material-icons-outlined) {
+  font-size: 18px;
+  color: var(--md-on-surface-dim);
+  transition: transform 0.2s;
+}
+
+.header.open :global(.material-icons-outlined):first-child {
+  transform: rotate(180deg);
+}
+
+.phaseTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--md-on-surface);
+}
+
+.count {
+  font-size: 12px;
+  color: var(--md-on-surface-dim);
+  margin-left: 4px;
+}
+
+.files {
+  border: 1px solid var(--md-outline);
+  border-radius: var(--md-radius-md);
+  background: var(--md-surface);
+  overflow: hidden;
+}
+
+.empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--md-on-surface-dim);
+}

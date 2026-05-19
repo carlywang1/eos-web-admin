@@ -1,0 +1,76 @@
+.container {
+  margin-bottom: 24px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--md-on-surface-variant);
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--md-radius-sm);
+  transition: background 0.15s;
+}
+
+.back:hover {
+  background: var(--md-surface-hover);
+  color: var(--md-on-surface);
+}
+
+.back :global(.material-icons-outlined) {
+  font-size: 18px;
+}
+
+.card {
+  background: var(--md-surface);
+  border-radius: var(--md-radius-lg);
+  border: 1px solid var(--md-outline);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--md-on-surface-variant);
+}
+
+.metaItem :global(.material-icons-outlined) {
+  font-size: 18px;
+  color: var(--md-on-surface-dim);
+}
+
+.metaLabel {
+  color: var(--md-on-surface-dim);
+  min-width: 48px;
+}
+
+.metaValue {
+  color: var(--md-on-surface);
+  font-weight: 500;
+}

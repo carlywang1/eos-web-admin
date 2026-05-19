@@ -1,0 +1,155 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 199;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 480px;
+  max-width: 90vw;
+  background: var(--md-surface);
+  box-shadow: var(--md-elevation-3);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--md-outline);
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.headerInfo :global(.material-icons-outlined) {
+  font-size: 20px;
+  color: var(--md-on-surface-dim);
+  flex-shrink: 0;
+}
+
+.fileName {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.headerActions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.headerBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-on-surface-variant);
+  transition: background 0.15s;
+}
+
+.headerBtn:hover {
+  background: var(--md-surface-hover);
+}
+
+.headerBtn :global(.material-icons-outlined) {
+  font-size: 18px;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  text-align: center;
+  padding: 40px 24px;
+  width: 100%;
+}
+
+.placeholder :global(.material-icons-outlined) {
+  font-size: 44px;
+  color: var(--md-on-surface-dim);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.previewTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--md-on-surface);
+  margin-bottom: 4px;
+}
+
+.previewHint {
+  font-size: 12px;
+  color: var(--md-on-surface-dim);
+  margin-bottom: 16px;
+}
+
+.mockDoc {
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--md-background);
+  border-radius: var(--md-radius-sm);
+  border: 1px solid var(--md-outline);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mockLine {
+  height: 6px;
+  background: var(--md-outline);
+  border-radius: 3px;
+}
+
+.meta {
+  border-top: 1px solid var(--md-outline);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--md-on-surface);
+}
+
+.metaLabel {
+  color: var(--md-on-surface-dim);
+}

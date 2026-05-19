@@ -1,0 +1,27 @@
+.chip {
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: var(--md-radius-full);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.confirming {
+  background: var(--stage-confirming-bg);
+  color: var(--stage-confirming-text);
+}
+
+.executing {
+  background: var(--stage-executing-bg);
+  color: var(--stage-executing-text);
+}
+
+.deploying {
+  background: var(--stage-deploying-bg);
+  color: var(--stage-deploying-text);
+}
+
+.done {
+  background: var(--stage-done-bg);
+  color: var(--stage-done-text);
+}

@@ -1,0 +1,81 @@
+.card {
+  display: block;
+  background: var(--md-surface);
+  border-radius: var(--md-radius-lg);
+  border: 1px solid var(--md-outline);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: var(--md-elevation-2);
+}
+
+.header {
+  padding: 20px 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.name {
+  color: var(--md-on-surface);
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--md-on-surface-variant);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaItem :global(.material-icons-outlined) {
+  font-size: 16px;
+  color: var(--md-on-surface-dim);
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.update {
+  padding: 14px 24px;
+  background: var(--md-background);
+  border-top: 1px solid var(--md-surface-container);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--md-on-surface-variant);
+}
+
+.update :global(.material-icons-outlined) {
+  font-size: 18px;
+  color: var(--md-on-surface-dim);
+}
+
+.updateText {
+  flex: 1;
+}
+
+.updateTime {
+  font-size: 12px;
+  color: var(--md-on-surface-dim);
+}

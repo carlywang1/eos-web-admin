@@ -1,0 +1,55 @@
+.dropzone {
+  border: 2px dashed var(--md-outline);
+  border-radius: var(--md-radius-md);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dropzone:hover,
+.active {
+  border-color: var(--md-primary);
+  background: rgba(26, 115, 232, 0.04);
+}
+
+.dropzone :global(.material-icons-outlined) {
+  font-size: 32px;
+  color: var(--md-on-surface-dim);
+  margin-bottom: 8px;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--md-on-surface-variant);
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--md-on-surface-dim);
+  margin-top: 4px;
+}
+
+.typeSelect {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.typeSelect label {
+  font-size: 13px;
+  color: var(--md-on-surface-variant);
+}
+
+.typeSelect select {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid var(--md-outline);
+  border-radius: var(--md-radius-sm);
+  background: var(--md-surface);
+  color: var(--md-on-surface);
+  cursor: pointer;
+}

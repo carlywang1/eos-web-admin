@@ -1,0 +1,146 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--md-on-surface-variant);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--md-primary);
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.filterWrapper {
+  position: relative;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--md-outline);
+  background: var(--md-surface);
+  color: var(--md-on-surface-variant);
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  background: var(--md-surface-hover);
+}
+
+.filterBtn :global(.material-icons-outlined) {
+  font-size: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  background: var(--md-surface);
+  border-radius: var(--md-radius-md);
+  box-shadow: var(--md-elevation-3);
+  padding: 12px 0;
+  min-width: 240px;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.section + .section {
+  border-top: 1px solid var(--md-surface-container);
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--md-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 20px 4px;
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: var(--md-on-surface);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.filterOption:hover {
+  background: var(--md-surface-hover);
+}
+
+.filterOption input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--md-primary);
+  cursor: pointer;
+}
+
+.sortOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: var(--md-on-surface);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.sortOption:hover {
+  background: var(--md-surface-hover);
+}
+
+.sortOption.active {
+  color: var(--md-primary);
+  font-weight: 500;
+}
+
+.sortOption :global(.material-icons-outlined) {
+  font-size: 18px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--md-on-surface-dim);
+}
+
+.empty :global(.material-icons-outlined) {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty p {
+  font-size: 14px;
+}
