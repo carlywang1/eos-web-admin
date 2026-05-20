@@ -23,6 +23,12 @@ export default {
     all: '全部',
     allTypes: '全部类型',
     noProjects: '暂无项目',
+    views: {
+      all: '全部项目',
+      sales: '销售看板（未立项）',
+      pm: '项目经理看板（已立项）',
+      completed: '已完成',
+    },
     columns: {
       name: '项目名称',
       source: '来源',
@@ -36,8 +42,14 @@ export default {
       quotation: '报价中',
       contract: '签约中',
       implementation: '实施中',
-      delivery: '交付中',
-      live: '已上线',
+      delivery: '实施中',
+      inProgress: '实施中',
+      live: '已完成',
+    },
+    established: {
+      all: '全部',
+      yes: '已立项',
+      no: '未立项',
     },
     types: {
       saas: 'SaaS',

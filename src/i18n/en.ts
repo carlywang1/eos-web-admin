@@ -23,6 +23,12 @@ export default {
     all: 'All',
     allTypes: 'All Types',
     noProjects: 'No projects',
+    views: {
+      all: 'All Projects',
+      sales: 'Sales Pipeline (Not Established)',
+      pm: 'PM Board (Established)',
+      completed: 'Completed',
+    },
     columns: {
       name: 'Project',
       source: 'Source',
@@ -36,8 +42,14 @@ export default {
       quotation: 'Quotation',
       contract: 'Contract',
       implementation: 'Implementation',
-      delivery: 'Delivery',
-      live: 'Live',
+      delivery: 'Implementation',
+      inProgress: 'Implementation',
+      live: 'Completed',
+    },
+    established: {
+      all: 'All',
+      yes: 'Established',
+      no: 'Not Established',
     },
     types: {
       saas: 'SaaS',

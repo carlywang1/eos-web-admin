@@ -93,31 +93,6 @@ export function FilePreview({ file, onClose }: FilePreviewProps) {
             </div>
           )}
         </div>
-
-        <div className={styles.meta}>
-          <div className={styles.metaRow}>
-            <span className={styles.metaLabel}>{t('preview.phase')}</span>
-            <span>{t(`preview.phases.${file.phase}`)}</span>
-          </div>
-          <div className={styles.metaRow}>
-            <span className={styles.metaLabel}>{t('preview.size')}</span>
-            <span>{formatSize(file.size)}</span>
-          </div>
-          <div className={styles.metaRow}>
-            <span className={styles.metaLabel}>{t('preview.uploadedAt')}</span>
-            <span>{file.uploadedAt}</span>
-          </div>
-          <div className={styles.metaRow}>
-            <span className={styles.metaLabel}>{t('preview.uploader')}</span>
-            <span>{file.uploadedBy}</span>
-          </div>
-          {file.source === 'ai' && (
-            <div className={styles.metaRow}>
-              <span className={styles.metaLabel}>{t('preview.source')}</span>
-              <span>EOS AI</span>
-            </div>
-          )}
-        </div>
       </div>
     </>
   );

@@ -74,10 +74,6 @@ export function ProjectDetailV2() {
       <div className={styles.filesCard}>
         <div className={styles.filesHeader}>
           <span>{t('detail.projectFiles')} ({files.length})</span>
-          <button className={styles.uploadBtn}>
-            <span className="material-icons-outlined">upload</span>
-            {t('templates.upload')}
-          </button>
         </div>
         <div className={styles.tableHead}>
           <span>{t('detail.columns.fileName')}</span>
@@ -94,7 +90,6 @@ export function ProjectDetailV2() {
                 {file.name.endsWith('.pdf') ? 'picture_as_pdf' : 'description'}
               </span>
               {file.name}
-              {file.emailSent && <span className={styles.sentBadge}>{t('detail.emailSent')}</span>}
             </span>
             <span><span className={styles.phaseTag}>{t(`detail.phases.${file.phase}`)}</span></span>
             <span>{formatSize(file.size)}</span>

@@ -13,30 +13,70 @@
   gap: 12px;
 }
 
-.filters {
-  display: flex;
-  gap: 8px;
+.viewFilterWrap {
+  position: relative;
 }
 
-.filterBtn {
-  font-size: 13px;
-  padding: 6px 16px;
-  border-radius: 100px;
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
   border: 1px solid var(--md-outline);
   background: var(--md-surface);
-  color: var(--md-on-surface-variant);
+  color: var(--md-on-surface);
+  cursor: pointer;
   transition: all 0.15s;
 }
 
-.filterBtn:hover {
+.viewBtn:hover {
   background: var(--md-surface-container);
-  border-color: var(--md-outline);
 }
 
-.filterBtn.active {
+.viewBtn :global(.material-icons-outlined) {
+  font-size: 18px;
+  color: var(--md-on-surface-dim);
+}
+
+.viewMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background: var(--md-surface);
+  border: 1px solid var(--md-outline);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+  min-width: 200px;
+  z-index: 50;
+}
+
+.viewMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin: 0 6px;
+  width: calc(100% - 12px);
+  color: var(--md-on-surface);
+  transition: background 0.1s;
+}
+
+.viewMenuItem:hover {
+  background: var(--md-surface-container);
+}
+
+.viewMenuItem.viewMenuActive {
   background: var(--badge-saas-bg);
   color: var(--md-primary);
-  border-color: var(--md-primary);
   font-weight: 500;
 }
 
@@ -156,7 +196,7 @@
 
 .tableHead {
   display: grid;
-  grid-template-columns: 3fr 80px 1fr 1fr 120px;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
   padding: 12px 20px;
   border-bottom: 1px solid var(--md-outline);
   font-size: 12px;
@@ -171,7 +211,7 @@
 
 .tableRow {
   display: grid;
-  grid-template-columns: 3fr 80px 1fr 1fr 120px;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
   padding: 14px 20px;
   align-items: center;
   border-bottom: 1px solid var(--md-surface-container);
@@ -206,33 +246,6 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--md-on-surface-dim);
-}
-
-.badge {
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 100px;
-  font-weight: 500;
-}
-
-.badge.saas {
-  background: var(--badge-saas-bg);
-  color: var(--badge-saas-text);
-}
-
-.badge.raas {
-  background: var(--badge-raas-bg);
-  color: var(--badge-raas-text);
-}
-
-.badge.ai {
-  background: var(--badge-ai-bg);
-  color: var(--badge-ai-text);
-}
-
-.badge.apps {
-  background: var(--badge-apps-bg);
-  color: var(--badge-apps-text);
 }
 
 .stageChip {

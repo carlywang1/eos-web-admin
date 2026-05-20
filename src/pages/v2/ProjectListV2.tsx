@@ -3,44 +3,54 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './ProjectListV2.module.css';
 import { getProjects } from '../../mocks/projects';
-import type { ProjectType, ProjectStage } from '../../types/project';
+import type { Project, ProjectType, ProjectStage } from '../../types/project';
+
+type ViewFilter = 'all' | 'sales' | 'pm' | 'completed';
+
+function isEstablished(project: Project): boolean {
+  if (project.steps.length <= 3) return true;
+  const contractStep = project.steps.find((s) => s.label === '签约' || s.label === 'Contract');
+  return contractStep ? contractStep.status === 'done' : false;
+}
 
 function getStageStyle(stage: ProjectStage) {
-  if (stage === 'implementation') return 'active';
+  if (stage === 'implementation' || stage === 'delivery') return 'active';
   if (stage === 'requirements-review' || stage === 'quotation') return 'warning';
-  if (stage === 'contract' || stage === 'delivery') return 'info';
+  if (stage === 'contract') return 'info';
   if (stage === 'live') return 'done';
   return 'active';
 }
 
 export function ProjectListV2() {
   const { t, i18n } = useTranslation();
-  const [stageFilter, setStageFilter] = useState<ProjectStage | 'all'>('all');
+  const [viewFilter, setViewFilter] = useState<ViewFilter>('all');
+  const [showViewMenu, setShowViewMenu] = useState(false);
   const [typeFilter, setTypeFilter] = useState<Set<ProjectType>>(new Set());
   const [showTypeMenu, setShowTypeMenu] = useState(false);
   const typeMenuRef = useRef<HTMLDivElement>(null);
+  const viewMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!showTypeMenu) return;
+    if (!showTypeMenu && !showViewMenu) return;
     const handler = (e: MouseEvent) => {
-      if (typeMenuRef.current && !typeMenuRef.current.contains(e.target as Node)) {
+      if (showTypeMenu && typeMenuRef.current && !typeMenuRef.current.contains(e.target as Node)) {
         setShowTypeMenu(false);
+      }
+      if (showViewMenu && viewMenuRef.current && !viewMenuRef.current.contains(e.target as Node)) {
+        setShowViewMenu(false);
       }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, [showTypeMenu]);
+  }, [showTypeMenu, showViewMenu]);
 
   const projects = getProjects(i18n.language);
 
-  const stageFilters: { value: ProjectStage | 'all'; label: string }[] = [
-    { value: 'all', label: t('projects.all') },
-    { value: 'requirements-review', label: t('projects.stages.requirementsReview') },
-    { value: 'quotation', label: t('projects.stages.quotation') },
-    { value: 'contract', label: t('projects.stages.contract') },
-    { value: 'implementation', label: t('projects.stages.implementation') },
-    { value: 'delivery', label: t('projects.stages.delivery') },
-    { value: 'live', label: t('projects.stages.live') },
+  const viewOptions: { value: ViewFilter; label: string }[] = [
+    { value: 'all', label: t('projects.views.all') },
+    { value: 'sales', label: t('projects.views.sales') },
+    { value: 'pm', label: t('projects.views.pm') },
+    { value: 'completed', label: t('projects.views.completed') },
   ];
 
   const typeOptions: { value: ProjectType; label: string }[] = [
@@ -51,25 +61,41 @@ export function ProjectListV2() {
   ];
 
   const filtered = projects.filter((p) => {
-    const matchStage = stageFilter === 'all' || p.stage === stageFilter;
+    let matchView = true;
+    if (viewFilter === 'sales') matchView = !isEstablished(p);
+    else if (viewFilter === 'pm') matchView = isEstablished(p) && p.stage !== 'live';
+    else if (viewFilter === 'completed') matchView = p.stage === 'live';
     const matchType = typeFilter.size === 0 || p.types.some((t) => typeFilter.has(t));
-    return matchStage && matchType;
+    return matchView && matchType;
   });
+
+  const currentViewLabel = viewOptions.find((v) => v.value === viewFilter)?.label;
 
   return (
     <div className={styles.page}>
       <h1>{t('projects.title')}</h1>
       <div className={styles.toolbar}>
-        <div className={styles.filters}>
-          {stageFilters.map((f) => (
-            <button
-              key={f.value}
-              className={`${styles.filterBtn} ${stageFilter === f.value ? styles.active : ''}`}
-              onClick={() => setStageFilter(f.value)}
-            >
-              {f.label}
-            </button>
-          ))}
+        <div className={styles.viewFilterWrap} ref={viewMenuRef}>
+          <button
+            className={styles.viewBtn}
+            onClick={() => setShowViewMenu(!showViewMenu)}
+          >
+            <span>{currentViewLabel}</span>
+            <span className="material-icons-outlined">expand_more</span>
+          </button>
+          {showViewMenu && (
+            <div className={styles.viewMenu}>
+              {viewOptions.map((v) => (
+                <button
+                  key={v.value}
+                  className={`${styles.viewMenuItem} ${viewFilter === v.value ? styles.viewMenuActive : ''}`}
+                  onClick={() => { setViewFilter(v.value); setShowViewMenu(false); }}
+                >
+                  {v.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
         <div className={styles.typeFilterWrap} ref={typeMenuRef}>
           <button
